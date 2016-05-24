@@ -1,0 +1,18 @@
+    """Return the n most frequently occuring words in s."""
+    spl = s.split()
+    d = dict()
+    a = []
+    for word in spl:
+        if word in d:
+            d[word] += 1
+        else:
+            d[word] = 1
+            # print d[word]
+    sort = sorted(d, key=lambda x: d[x], reverse = True)
+    i = 0
+    for k in sort:
+        if i < n:
+            a.append({ k : d[k]})
+        i = i+1
+    top_n = a
+    return top_n
